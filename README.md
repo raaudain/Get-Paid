@@ -4,7 +4,7 @@
 
 GetPaid is a Python script that automatically fills out your timecard on SpringAhead's platform.  
 
-If your company uses SpringAhead and you keep forgetting to fill out your hours, this GetPaid is for you.
+If your company uses SpringAhead and you keep forgetting to fill out your hours, GetPaid is for you.
  
 ## What's required?
 
