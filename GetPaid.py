@@ -19,15 +19,13 @@ browser.set_page_load_timeout(30)
 browser.get("https://my.springahead.com/go/Account/Logon/REPLACE_WITH_COMPANY'S_NAME/")
 
 userID = browser.find_elements_by_id("UserName")
-# Python thinks the "UserName" id is a list so I indexed to zero.
-# This took hours to figure out. Thank you Dozon Higgs on Stack Overflow.
+
 userID[0].send_keys(username)
 browser.find_element_by_id("Password").send_keys(password)
 browser.find_element_by_class_name("submit").click()
 
 browser.find_element_by_class_name("small").click()
 
-# For SpringAhead, Monday is 3, Tuesday is 5, Wednesday is 7, Thursday is 9, Friday is 11
 workday = 3
 
 while workday <= 11:
@@ -50,23 +48,14 @@ while workday <= 11:
 
     workday += 2
 
-# Click Submit button
+# Clicks submit button
 browser.find_element_by_id("submitall").click()
 
-# Break
 time.sleep(1)
 
-#############################################
-#                                           #
-# Below submits timecard and closes browser #
-#                                           #
-#############################################
-
-# Are you sure? Yes.
+# Does the final submission for the timecard
 autoit.send("{ENTER}")
 
-# Last break
 time.sleep(10)
 
-# Close browser
 browser.quit()
